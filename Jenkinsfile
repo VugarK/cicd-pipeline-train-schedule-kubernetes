@@ -46,11 +46,11 @@ pipeline {
                 input 'Deploy to Production?'
                 milestone(1)
                 
-                kubernetesDeploy{
+                kubernetesDeploy(
                     kubeconfigId: 'k8sconfig',
                     configs: 'train-schedule-kube.yml',
                     enableConfigSubstitution: true
-                
+                )
               }      
             }
         }
